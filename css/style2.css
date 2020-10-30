@@ -1,0 +1,22 @@
+body {
+    margin:10px;
+    font-size: x-large;
+    color: #cacaca;
+    background-color: #333333;
+    font-family: monospace;
+}
+
+h1 {
+    text-align: center;
+}
+
+.p1 {
+    position: relative;
+    top: 108px;
+    left: 600px;
+}
+
+.p2 {
+    position: relative;
+    left: 1200px;
+}

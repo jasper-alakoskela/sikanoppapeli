@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikanoppapeli</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <h1>Tervetuloa Sikanoppapeliin!</h1>
+    <h2>Valitse asetukset ja tallenna niin pääset pelaamaan.</h2>
+    <div class="rules">
+        <h2>Säännöt:</h2>
+        <div>
+            <h3>1 Noppa</h3>
+            <p>
+                Pelin tarkoitus on kerätä sata pistettä tai enemmän (pistemäärän voi sopia ennen peliä) heittämällä noppaa tai noppia ja laskemalla heittojen summa yhteen.
+                Pelaaja heittää omalla vuorollaan noppaa niin pitkään, kunnes
+                <br><br>
+                a.heittää ykkösen
+                <br>
+                b.päättää lopettaa heittämisen.
+                <br><br>
+                Jos pelaaja heittää ykkösen, hänen vuoronsa loppuu ja sen kierroksen heittojen summa nollataan. Vuoro siirtyy seuraavalle pelaajalle. Jos pelaaja päättää lopettaa heittämisen ennen kuin hän heittää ykkösen, heittojen summa lasketaan yhteen ja lisätään edellisen kierroksen summaan. Tämän jälkeen vuoro siirtyy seuraavalle pelaajalle.
+            </p>
+        </div>
+        <div>
+            <h3>2 Noppaa</h3>
+            <p>
+                Sikaa voit pelata kahdella nopalla, 
+                jolloin säännöt muuttuvat hieman: Kun heität tuplat, saat tuplapisteet 
+                (esim. kaksi kolmosta on 12 pisteen arvoinen heitto) Kun heität kaksi ykköstä, saat
+                25 pistettä Kun heität vain toisella nopalla ykkösen, vuoro siirtyy seuraavalle pelaajalle etkä saa pisteitä Kun heität kolme tuplaa peräkkäin, vuoro siirtyy seuraavalle pelaajalle 
+                etkä saa pisteitä Sika ei siis ole tämän monimutkaisempi noppapeli. Se on nopeatempoinen peli, jonka parissa aika kuluu rattoisasti
+            </p>
+        </div>
+        <div>
+            <h3>Esimerkkejä:</h3>
+        <p>Esimerkki 1:
+            Ville heittää ensimmäisellä heitollaan kolme ja päättää jatkaa heittämistä.
+            Hän heittää tämän jälkeen vielä 6, 6, 4, 3, 5, 1. Koska hän heitti ykkösen, Villen vuoro päättyy ja hän ei saa tällä heittovuorollaan yhtään pistettä.
+            <br><br>
+            Esimerkki 2:
+            Mari heittää ensimmäisellä kutosen ja päättää jatkaa heittämistä.
+            Mari heittää vielä silmäluvut 2, 4, 3, 4, ja lopettaa heittämisen.
+            Koska Mari itse päätti päättää vuoronsa sen sijaan, että vuoro olisi loppunut ykkösen heittämiseen, saa Mari omalla vuorollaan yhteensä 19 pistettä (6+2+4+3+4=19).</p>
+        </div>
+        
+    </div>
+    <div class="form">
+        <form action="">
+            <label for="p1name">Nimi:</label>
+            <input type="text" id="p1name" placeholder="Pelaaja1">
+            <br><br>
+            <label for="p2name">Nimi:</label>
+            <input type="text" id="p2name" placeholder="Pelaaja2">
+            <br><br>
+            <input type="radio" id="1dice" value="1dice" name="dice">
+            <label for="1dice">1 Noppa</label>
+            <br><br>
+            <input type="radio" id="2dice" value="2dice" name="dice">
+            <label for="2dice">2 Noppaa</label>
+            <br><br>
+            <label for="points">Valite pistemäärä</label>
+            <select name="points" id="points">
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Tallenna" id="savebtn">
+        </form>
+    </div>
+    
+    
+    
+</body>
+</html>

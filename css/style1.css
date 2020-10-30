@@ -1,0 +1,42 @@
+body {
+    margin:10px;
+    font-size: large;
+    color: #333333;
+    background-color: #cacaca;
+    font-family: monospace;
+}
+
+.rules {
+    background-color: #333333;
+    color: #cacaca;
+    text-align: center;
+    border: outset 6px;
+    width: 700px;
+    height: 800px;
+    margin: 5px;
+    position: relative;
+    left: 1100px;
+    top: -30px;
+}
+
+.form {
+    padding: 5px;
+    background-color: #333333;
+    color: #cacaca;
+    font-size: x-large;
+    display: table;
+    border: outset  5px;
+    position: relative;
+    top: -800px;
+    right: -50px;
+}
+
+input {
+    padding: 3px;
+}
+select {
+    padding: 3px;
+}
+
+
+

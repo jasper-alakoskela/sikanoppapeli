@@ -1,5 +1,6 @@
 body {
     margin:10px;
+    margin-right: 1200px;
     font-size: x-large;
     color: #cacaca;
     background-color: #333333;
@@ -19,4 +20,29 @@ h1 {
 .p2 {
     position: relative;
     left: 1200px;
+}
+
+div.dice{
+	width:32px;
+	background:#F5F5F5;
+	border:#999 1px solid;
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+    margin:5px;
+    position: relative;
+    left: 920px;
+}
+
+#rollbtn{
+    position: relative;
+    left: 890px;
+}
+#stopbtn{
+    position: relative;
+    left: 900px;
+}
+#status{
+    position: relative;
+    left: 945px;
 }

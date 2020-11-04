@@ -8,7 +8,8 @@ body {
 }
 
 h1 {
-    text-align: center;
+    position: relative;
+    left:800px;
 }
 
 .p1 {

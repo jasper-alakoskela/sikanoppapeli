@@ -18,6 +18,10 @@ h1 {
     left: 600px;
 }
 
+#p1name {
+    color: red;
+}
+
 .p2 {
     position: relative;
     left: 1200px;
@@ -39,7 +43,7 @@ div.dice{
     position: relative;
     left: 890px;
 }
-#stopbtn{
+#getscorebtn{
     position: relative;
     left: 900px;
 }

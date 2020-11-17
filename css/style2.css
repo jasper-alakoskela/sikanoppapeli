@@ -28,6 +28,7 @@ h1 {
 }
 
 div.dice{
+    display: block;
 	width:32px;
 	background:#F5F5F5;
 	border:#999 1px solid;
@@ -50,4 +51,11 @@ div.dice{
 #score{
     position: relative;
     left: 945px;
+}
+
+#dicegif{
+    display: none;
+    position: relative;
+    left: 880px;
+   bottom: 320px; 
 }

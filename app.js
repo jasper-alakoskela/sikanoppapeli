@@ -13,15 +13,25 @@ let player1Score = 0;
 let player2Score = 0;
 
 function rollDice() {
-    let dice = document.getElementById("die1");
+
+    document.getElementById("dicegif").style.display = "block";
+    document.getElementById("die").style.visibility = "hidden";
+
+
+    let dice = document.getElementById("die");
     dice = Math.floor(Math.random() * 6) + 1;
     die.innerHTML = dice;
+
+    document.getElementById("dicegif").style.display = "none";
+    document.getElementById("die").style.visibility = "visible";
+
     score += dice;
 
     if (dice == 1) {
         score = 0;
         changeTurn();
     }
+
 
     update();
 

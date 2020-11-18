@@ -4,6 +4,8 @@ let player2 = document.getElementById("p2");
 let p1Name = document.getElementById("p1name");
 let p2Name = document.getElementById("p2name");
 
+
+
 let players = [player1, player2]
 
 let dice = 0;
@@ -14,16 +16,16 @@ let player2Score = 0;
 
 function rollDice() {
 
-    document.getElementById("dicegif").style.display = "block";
-    document.getElementById("die").style.visibility = "hidden";
-
+    //document.getElementById("dicegif").style.display = "block";
+    //document.getElementById("die").style.visibility = "hidden";
 
     let dice = document.getElementById("die");
     dice = Math.floor(Math.random() * 6) + 1;
+
     die.innerHTML = dice;
 
-    document.getElementById("dicegif").style.display = "none";
-    document.getElementById("die").style.visibility = "visible";
+    //document.getElementById("dicegif").style.display = "none";
+    //document.getElementById("die").style.visibility = "visible";
 
     score += dice;
 
@@ -32,6 +34,21 @@ function rollDice() {
         changeTurn();
     }
 
+
+    let face1 = new Image()
+    face1.src = "img/dice1.png"
+    let face2 = new Image()
+    face2.src = "img/dice2.png"
+    let face3 = new Image()
+    face3.src = "img/dice3.png"
+    let face4 = new Image()
+    face4.src = "img/dice4.png"
+    let face5 = new Image()
+    face5.src = "img/dice5.png"
+    let face6 = new Image()
+    face6.src = "img/dice6.png"
+
+    document.images["die"].src = eval("face" + dice + ".src")
 
     update();
 

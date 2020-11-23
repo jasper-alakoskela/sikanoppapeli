@@ -4,10 +4,9 @@ let player2 = document.getElementById("p2");
 let p1Name = document.getElementById("p1name");
 let p2Name = document.getElementById("p2name");
 
+let players = [{ player1 }, { player2 }]
 
-
-let players = [player1, player2]
-
+let winScore = document.getElementById("winscore");
 let dice = 0;
 let score = 0;
 let turn = 0;
@@ -95,3 +94,9 @@ function getScore() {
 function update() {
     document.getElementById("score").innerHTML = score;
 }
+
+/*1 nopalla*/
+
+/*2 nopalla lisäykset*/
+
+/*alku-sivun koodit*/

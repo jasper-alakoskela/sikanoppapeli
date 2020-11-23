@@ -52,6 +52,12 @@ img.dice{
 #dicegif{
     display: none;
     position: relative;
-    left: 880px;
-   bottom: 320px; 
+    left: 865px;
+    bottom: 255px;
+}
+
+#winscore{
+    position: relative;
+    left: 780px;
+    bottom: -25px;
 }

@@ -59,30 +59,58 @@
     </div>
     <div class="form">
         <form action="">
-            <label for="p1name">Nimi:</label>
-            <input type="text" id="p1name" placeholder="Pelaaja1">
-            <br><br>
-            <label for="p2name">Nimi:</label>
-            <input type="text" id="p2name" placeholder="Pelaaja2">
-            <br><br>
-            <input type="radio" id="1dice" value="1dice" name="dice">
-            <label for="1dice">1 Noppa</label>
-            <br><br>
-            <input type="radio" id="2dice" value="2dice" name="dice">
-            <label for="2dice">2 Noppaa</label>
-            <br><br>
-            <label for="points">Valite pistemäärä</label>
-            <select name="points" id="points">
-                <option value="30">30</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="150">150</option>
-            </select>
-            <br><br>
+            <div>
+                <label for="p1name">Nimi:</label>
+                <input type="text" id="p1name" placeholder="Pelaaja1">
+                <br><br>
+                <label for="p2name">Nimi:</label>
+                <input type="text" id="p2name" placeholder="Pelaaja2">
+                <br>
+            </div>
+
+            <div>
+                <div class="p1color">
+                    <p>Pelaaja1 väri:</p>
+                    <div id="blue" value="blue" onclick="chooseColor()"></div>
+                    <div id="green" value="green" onclick="chooseColor()"></div>
+                    <div id="pink" value="pink" onclick="chooseColor()"></div>
+                    <div id="yellow" value="yellow" onclick="chooseColor()"></div>
+                </div>
+
+                <div class="p2color">
+                    <p>Pelaaja2 väri:</p>
+                    <div id="blue" value="blue" onclick="chooseColor()"></div>
+                    <div id="green" value="green" onclick="chooseColor()"></div>
+                    <div id="pink" value="pink" onclick="chooseColor()"></div>
+                    <div id="yellow" value="yellow" onclick="chooseColor()"></div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <input type="radio" id="1dice" value="1dice" name="dice">
+                <label for="1dice">1 Noppa</label>
+                <br><br>
+                <input type="radio" id="2dice" value="2dice" name="dice">
+                <label for="2dice">2 Noppaa</label>
+                <br><br>
+            </div>
+
+            <div>
+                <label for="points">Valite pistemäärä</label>
+                <select name="points" id="points">
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                </select>
+                <br><br>
+            </div>
+
             <input type="submit" value="Tallenna" id="savebtn">
         </form>
     </div>
-    
+
+    <script src="app.js"></script>
 </body>
 
 </html>

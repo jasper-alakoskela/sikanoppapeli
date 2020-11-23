@@ -38,5 +38,30 @@ select {
     padding: 3px;
 }
 
+#blue{
+    background-color: dodgerblue;
+    width: 25px; height: 25px;
+    margin: 1px;
+    display: inline-block;
+}
+#green{
+    background-color: forestgreen;
+    width: 25px; height: 25px;
+    margin: 1px;
+    display: inline-block;
+}
+#pink{
+    background-color: palevioletred;
+    width: 25px; height: 25px;
+    margin: 1px;
+    display: inline-block;
+}
+#yellow{
+    background-color: gold;
+    width: 25px; height: 25px;
+    margin: 1px;
+    display: inline-block;
+}
+
 
 

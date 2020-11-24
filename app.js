@@ -33,7 +33,6 @@ function rollDice() {
         changeTurn();
     }
 
-
     let face1 = new Image()
     face1.src = "img/dice1.png"
     let face2 = new Image()
@@ -49,7 +48,7 @@ function rollDice() {
 
     document.images["die"].src = eval("face" + dice + ".src")
 
-    update();
+    document.getElementById("score").innerHTML = score;
 
     console.log(dice);
 }
@@ -90,9 +89,8 @@ function getScore() {
     }
 }
 
+if (player1score >= winScore) {
 
-function update() {
-    document.getElementById("score").innerHTML = score;
 }
 
 /*1 nopalla*/

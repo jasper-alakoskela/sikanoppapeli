@@ -65,24 +65,47 @@
                 <br><br>
                 <label for="p2name">Nimi:</label>
                 <input type="text" id="p2name" placeholder="Pelaaja2">
-                <br>
             </div>
 
             <div>
                 <div class="p1color">
                     <p>Pelaaja1 väri:</p>
-                    <div id="blue" value="blue" onclick="chooseColor()"></div>
-                    <div id="green" value="green" onclick="chooseColor()"></div>
-                    <div id="pink" value="pink" onclick="chooseColor()"></div>
-                    <div id="yellow" value="yellow" onclick="chooseColor()"></div>
+                    <label class="container">
+                        <input class="color" type="radio" checked="checked" name="p1color">
+                        <span class="checkmark" id="blue"></span>
+                    </label>
+                    <label class="container">
+                        <input class="color" type="radio" name="p1color">
+                        <span class="checkmark" id="green"></span>
+                    </label>
+                    <label class="container">
+                        <input class="color" type="radio" name="p1color">
+                        <span class="checkmark" id="pink"></span>
+                    </label>
+                    <label class="container">
+                        <input class="color" type="radio" name="p1color">
+                        <span class="checkmark" id="yellow"></span>
+                    </label>
                 </div>
 
                 <div class="p2color">
                     <p>Pelaaja2 väri:</p>
-                    <div id="blue" value="blue" onclick="chooseColor()"></div>
-                    <div id="green" value="green" onclick="chooseColor()"></div>
-                    <div id="pink" value="pink" onclick="chooseColor()"></div>
-                    <div id="yellow" value="yellow" onclick="chooseColor()"></div>
+                    <label class="container">
+                        <input class="color" type="radio" name="p2color">
+                        <span class="checkmark" id="blue"></span>
+                    </label>
+                    <label class="container">
+                        <input class="color" type="radio" checked="checked" name="p2color">
+                        <span class="checkmark" id="green"></span>
+                    </label>
+                    <label class="container">
+                        <input class="color" type="radio" name="p2color">
+                        <span class="checkmark" id="pink"></span>
+                    </label>
+                    <label class="container">
+                        <input class="color" type="radio" name="p2color">
+                        <span class="checkmark" id="yellow"></span>
+                    </label>
                 </div>
             </div>
             <br>

@@ -90,8 +90,20 @@ function getScore() {
 }
 
 if (player1score >= winScore) {
-
+    document.getElementById("p1won").style.visiblity = "visible";
+    document.getElementById("rollbtn").disabled = true;
+    document.getElementById("getscorebtn").disabled = true;
 }
+else if (player2score >= winScore) {
+    document.getElementById("p2won").style.visiblity = "visible";
+    document.getElementById("rollbtn").disabled = true;
+    document.getElementById("getscorebtn").disabled = true;
+}
+else {
+    document.getElementById("p1won").style.visiblity = "hidden";
+    document.getElementById("p2won").style.visiblity = "hidden";
+}
+
 
 /*1 nopalla*/
 

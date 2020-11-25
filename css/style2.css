@@ -38,15 +38,15 @@ img.dice{
 
 #rollbtn{
     position: relative;
-    left: 890px;
+    left: 900px;
 }
 #getscorebtn{
     position: relative;
-    left: 900px;
+    left: 920px;
 }
 #score{
     position: relative;
-    left: 945px;
+    left: 960px;
 }
 
 #dicegif{
@@ -63,6 +63,7 @@ img.dice{
 }
 
 #p1won{
+    visibility: hidden;
     text-align: center;
     width: 200px;
     height: 150px;
@@ -71,8 +72,8 @@ img.dice{
     border:rgb(46, 46, 46) solid 10px;
     border-radius: 5px;
     position: absolute;
-    top: 300px;
-    right: 750px;
+    top: 230px;
+    right: 842px;
 }
 #p2won{
     visibility: hidden;
@@ -84,8 +85,8 @@ img.dice{
     border: rgb(46, 46, 46) solid 10px;
     border-radius: 5px;
     position: absolute;
-    top: 300px;
-    right: 750px;
+    top: 230px;
+    right: 842px;
 }
 
 .playagainbtn{

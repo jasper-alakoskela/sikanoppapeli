@@ -1,4 +1,3 @@
-
 let player1 = document.getElementById("p1");
 let player2 = document.getElementById("p2");
 let p1Name = document.getElementById("p1name");
@@ -7,7 +6,9 @@ let p2Name = document.getElementById("p2name");
 let players = [{ player1 }, { player2 }]
 
 let winScore = document.getElementById("winscore");
+winScore = 50;
 let dice = 0;
+let dice2 = 0;
 let score = 0;
 let turn = 0;
 let player1Score = 0;
@@ -23,14 +24,23 @@ function rollDice() {
 
     die.innerHTML = dice;
 
+    let dice2 = document.getElementById("die2");
+    dice2 = Math.floor(Math.random() * 6) + 1;
+
+    die2.innerHTML = dice2;
+
     //document.getElementById("dicegif").style.display = "none";
     //document.getElementById("die").style.visibility = "visible";
 
-    score += dice;
+    score = score + dice + dice2;
 
-    if (dice == 1) {
+    if (dice == 1 || dice2 == 1) {
         score = 0;
         changeTurn();
+    }
+
+    if (dice == dice2) {
+        score = score * 2;
     }
 
     let face1 = new Image()
@@ -47,11 +57,26 @@ function rollDice() {
     face6.src = "img/dice6.png"
 
     document.images["die"].src = eval("face" + dice + ".src")
+    document.images["die2"].src = eval("face" + dice2 + ".src")
 
     document.getElementById("score").innerHTML = score;
 
-    console.log(dice);
+    if (player1Score >= winScore) {
+        document.getElementById("p1won").style.visiblity = "visible";
+        document.getElementById("rollbtn").disabled = true;
+        document.getElementById("getscorebtn").disabled = true;
+    }
+    else if (player2Score >= winScore) {
+        document.getElementById("p2won").style.visiblity = "visible";
+        document.getElementById("rollbtn").disabled = true;
+        document.getElementById("getscorebtn").disabled = true;
+    }
+    else {
+        document.getElementById("p1won").style.visiblity = "hidden";
+        document.getElementById("p2won").style.visiblity = "hidden";
+    }
 }
+
 
 function changeTurn() {
 
@@ -79,34 +104,15 @@ function getScore() {
         player1Score += score;
         document.getElementById("p1score").innerHTML = `Pisteet:${player1Score}`;
         score = 0;
+        console.log(player1Score);
         changeTurn();
     }
     else {
         player2Score += score;
         document.getElementById("p2score").innerHTML = `Pisteet:${player2Score}`;
         score = 0;
+        console.log(player2Score);
         changeTurn();
     }
 }
 
-if (player1score >= winScore) {
-    document.getElementById("p1won").style.visiblity = "visible";
-    document.getElementById("rollbtn").disabled = true;
-    document.getElementById("getscorebtn").disabled = true;
-}
-else if (player2score >= winScore) {
-    document.getElementById("p2won").style.visiblity = "visible";
-    document.getElementById("rollbtn").disabled = true;
-    document.getElementById("getscorebtn").disabled = true;
-}
-else {
-    document.getElementById("p1won").style.visiblity = "hidden";
-    document.getElementById("p2won").style.visiblity = "hidden";
-}
-
-
-/*1 nopalla*/
-
-/*2 nopalla lisäykset*/
-
-/*alku-sivun koodit*/

@@ -10,24 +10,38 @@
 
 <body>
     <h1>Sikanoppapeli</h1>
-    <div class="p1">
-        <h2>Pelaaja1</h2>
-        <p id="p1name"></p>
-        <p>Pisteet:0</p>
+
+    <h2 id="winscore">Pistettä voittoon:50</h2>
+
+    <div class="p1" id="p1">
+        <h2 id="p1name">Pelaaja1</h2>
+        <p id="p1score">Pisteet:0</p>
     </div>
-    <div class="p2">
-        <h2>Pelaaja2</h2>
-        <p id="p2name"></p>
-        <p>Pisteet:0</p>
+    <div class="p2" id="p1">
+        <h2 id="p2name">Pelaaja2</h2>
+        <p id="p2score">Pisteet:0</p>
     </div>
     <br><br>
-    <div id="die1" class="dice">0</div>
-    <div id="die2" class="dice">0</div>
-    <br><br>
-    <button onclick="rollDice()">Heitä</button>
+    <img src="img/dice1.png" name="die" id="die" class="dice" style="display: inline;">
+    <img src="img/dice1.png" name="die2" id="die2" class="dice" style="display: inline;">
     <br>
-    <h2 id="status"></h2>
-    <script src="app.js"></script>
+    <button id="rollbtn" onclick="rollDice()">Heitä</button>
+    <button id="getscorebtn">Kerää Pisteet</button>
+    <h2 id="score">0</h2>
+
+    <img id="dicegif" src="img/dice.gif">
+
+    <div id="p1won">
+        <h2>Pelaaja1 voitti</h2>
+        <button class="playagainbtn"><a href="index.html"></a>Pelaa uudestaan</button>
+    </div>
+
+    <div id="p2won">
+        <h2>Pelaaja2 voitti</h2>
+        <button class="playagainbtn"><a href="index.html"></a>Pelaa uudestaan</button>
+    </div>
+
+    <script src="2dice.js"></script>
 </body>
 
 </html>

@@ -34,13 +34,24 @@ function rollDice() {
 
     score = score + dice + dice2;
 
-    if (dice == 1 || dice2 == 1) {
+    if (dice == 1 && dice2 == 1) {
+        score = score * 2;
+        document.getElementById("getscorebtn").disabled = false;
+    }
+
+    else if (dice == 1 || dice2 == 1) {
         score = 0;
+        document.getElementById("getscorebtn").disabled = true;
         changeTurn();
+    }
+
+    else {
+        document.getElementById("getscorebtn").disabled = false;
     }
 
     if (dice == dice2) {
         score = score * 2;
+        document.getElementById("getscorebtn").disabled = false;
     }
 
     let face1 = new Image()
@@ -62,24 +73,27 @@ function rollDice() {
     document.getElementById("score").innerHTML = score;
 
     if (player1Score >= winScore) {
-        document.getElementById("p1won").style.visiblity = "visible";
+        document.getElementById("p1won").style.display = "inline";
         document.getElementById("rollbtn").disabled = true;
         document.getElementById("getscorebtn").disabled = true;
     }
     else if (player2Score >= winScore) {
-        document.getElementById("p2won").style.visiblity = "visible";
+        document.getElementById("p2won").style.display = "inline";
         document.getElementById("rollbtn").disabled = true;
         document.getElementById("getscorebtn").disabled = true;
     }
     else {
-        document.getElementById("p1won").style.visiblity = "hidden";
-        document.getElementById("p2won").style.visiblity = "hidden";
+        document.getElementById("p1won").style.display = "none";
+        document.getElementById("p2won").style.display = "none";
     }
+    console.log(dice);
+    console.log(dice2);
+
 }
 
 
 function changeTurn() {
-
+    document.getElementById("getscorebtn").disabled = true;
     let currentPlayer = players[turn]
 
     turn++;
@@ -104,15 +118,14 @@ function getScore() {
         player1Score += score;
         document.getElementById("p1score").innerHTML = `Pisteet:${player1Score}`;
         score = 0;
-        console.log(player1Score);
         changeTurn();
     }
     else {
         player2Score += score;
         document.getElementById("p2score").innerHTML = `Pisteet:${player2Score}`;
         score = 0;
-        console.log(player2Score);
         changeTurn();
     }
 }
+
 

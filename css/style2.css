@@ -1,5 +1,5 @@
 body {
-    margin:10px;
+    margin-right: 950px;
     font-size: x-large;
     color: #cacaca;
     background-color: #333333;
@@ -7,7 +7,8 @@ body {
 }
 
 h1 {
-    text-align: center;
+    position: relative;
+    left: 650px;
 }
 
 .p1 {
@@ -35,6 +36,14 @@ img.dice{
     right: -690px;
     bottom: 30px;
 }
+img.dice1{
+    width: 80px;
+    height: 80px;
+    margin:5px;
+    position: relative;
+    left: 740px;
+    bottom: 30px;
+}
 
 #rollbtn{
     position: relative;
@@ -45,7 +54,8 @@ img.dice{
     left: 750px;
 }
 #score{
-    text-align: center;
+    position: relative;
+    left: 780px;
 }
 
 #dicegif{
@@ -56,7 +66,8 @@ img.dice{
 }
 
 #winscore{
-    text-align: center;
+    position: relative;
+    left: 630px;
 }
 
 #p1won{

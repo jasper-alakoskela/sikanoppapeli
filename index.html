@@ -37,8 +37,7 @@
                 jolloin säännöt muuttuvat hieman: Kun heität tuplat, saat tuplapisteet
                 (esim. kaksi kolmosta on 12 pisteen arvoinen heitto) Kun heität kaksi ykköstä, saat
                 25 pistettä Kun heität vain toisella nopalla ykkösen, vuoro siirtyy seuraavalle pelaajalle etkä saa
-                pisteitä Kun heität kolme tuplaa peräkkäin, vuoro siirtyy seuraavalle pelaajalle
-                etkä saa pisteitä Sika ei siis ole tämän monimutkaisempi noppapeli. Se on nopeatempoinen peli, jonka
+                pisteitä. Sika ei siis ole tämän monimutkaisempi noppapeli. Se on nopeatempoinen peli, jonka
                 parissa aika kuluu rattoisasti
             </p>
         </div>
@@ -110,11 +109,11 @@
             </div>
             <br>
             <div>
-                <input type="radio" id="1dice" value="1dice" name="dice">
-                <label for="1dice">1 Noppa</label>
+                <input type="radio" id="dice1" value="dice1" name="dice" checked="checked">
+                <label for="dice1">1 Noppa</label>
                 <br><br>
-                <input type="radio" id="2dice" value="2dice" name="dice">
-                <label for="2dice">2 Noppaa</label>
+                <input type="radio" id="dice2" value="dice2" name="dice">
+                <label for="dice2">2 Noppaa</label>
                 <br><br>
             </div>
 
@@ -129,11 +128,33 @@
                 <br><br>
             </div>
 
-            <input type="submit" value="Tallenna" id="savebtn">
+            <input type="submit" value="Tallenna" id="savebtn" onclick="getData()">
         </form>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        function getData() {
+            localStorage.setItem("p1Name", p1name.value);
+            localStorage.setItem("p2Name", p2name.value);
+
+            const p1Color = document.querySelector("input[name='p1color']:checked");
+            localStorage.setItem("p1color", p1color.value);
+
+            const p2Color = document.querySelector("input[name='p2color']:checked");
+            localStorage.setItem("p2color", p2color.value);
+
+            const whichDice = document.querySelector("input[name='dice']:checked");
+            localStorage.setItem("dice", dice.value);
+
+            const points = document.querySelectorAll("input[name='points']:checked");
+            points = [];
+            for (i = 0; i < points.length; i++) {
+                console.log(points[i].value)
+                languages.push(points[i].value);
+            }
+            localStorage.setItem("points", points);
+        }
+    </script>
 </body>
 
 </html>

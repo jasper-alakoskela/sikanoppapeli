@@ -1,12 +1,11 @@
-let player1 = document.getElementById("p1");
-let player2 = document.getElementById("p2");
-let p1Name = document.getElementById("p1name");
-let p2Name = document.getElementById("p2name");
+
+let p1Name = localStorage.getItem("p1Name");
+let p2Name = localStorage.getItem("p2Name");
 
 let players = [{ player1 }, { player2 }]
 
 let winScore = document.getElementById("winscore");
-winScore = 50;
+winScore = localStorage.getItem("points");
 let dice = 0;
 let dice2 = 0;
 let score = 0;
@@ -100,12 +99,12 @@ function changeTurn() {
 
     if (turn == players.length) {
         turn = 0;
-        p1Name.style.color = "red";
+        p1Name.style.color = localStorage.getItem("p1color");
         p2Name.style.color = "#cacaca";
     }
     else {
         turn = 1;
-        p2Name.style.color = "red";
+        p2Name.style.color = localStorage.getItem("p2color");
         p1Name.style.color = "#cacaca";
     }
 

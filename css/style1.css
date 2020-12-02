@@ -12,11 +12,11 @@ body {
     text-align: center;
     border: outset 6px;
     width: 700px;
-    height: 800px;
+    height: 750px;
     margin: 5px;
     position: relative;
-    left: 1100px;
-    top: -30px;
+    left: 800px;
+    bottom: 20px;
 }
 
 .form {
@@ -27,8 +27,8 @@ body {
     display: table;
     border: outset  5px;
     position: relative;
-    top: -800px;
-    right: -50px;
+    bottom: 750px;
+    left: 50px;
 }
 
 input {

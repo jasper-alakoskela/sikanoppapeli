@@ -15,9 +15,6 @@ let player2Score = 0;
 
 function rollDice() {
 
-    //document.getElementById("dicegif").style.display = "block";
-    //document.getElementById("die").style.visibility = "hidden";
-
     let dice = document.getElementById("die");
     dice = Math.floor(Math.random() * 6) + 1;
 
@@ -27,9 +24,6 @@ function rollDice() {
     dice2 = Math.floor(Math.random() * 6) + 1;
 
     die2.innerHTML = dice2;
-
-    //document.getElementById("dicegif").style.display = "none";
-    //document.getElementById("die").style.visibility = "visible";
 
     score = score + dice + dice2;
 

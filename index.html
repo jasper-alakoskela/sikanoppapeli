@@ -57,7 +57,7 @@
 
     </div>
     <div class="form">
-        <form action="">
+        <form action="/" id="form">
             <div>
                 <label for="p1name">Nimi:</label>
                 <input type="text" id="p1name" placeholder="Pelaaja1">
@@ -70,19 +70,19 @@
                 <div class="p1color">
                     <p>Pelaaja1 väri:</p>
                     <label class="container">
-                        <input class="color" type="radio" checked="checked" name="p1color">
+                        <input class="color" type="radio" checked="checked" name="p1color" value="blue">
                         <span class="checkmark" id="blue"></span>
                     </label>
                     <label class="container">
-                        <input class="color" type="radio" name="p1color">
+                        <input class="color" type="radio" name="p1color" value="green">
                         <span class="checkmark" id="green"></span>
                     </label>
                     <label class="container">
-                        <input class="color" type="radio" name="p1color">
+                        <input class="color" type="radio" name="p1color" value="pink">
                         <span class="checkmark" id="pink"></span>
                     </label>
                     <label class="container">
-                        <input class="color" type="radio" name="p1color">
+                        <input class="color" type="radio" name="p1color" value="yellow">
                         <span class="checkmark" id="yellow"></span>
                     </label>
                 </div>
@@ -90,19 +90,19 @@
                 <div class="p2color">
                     <p>Pelaaja2 väri:</p>
                     <label class="container">
-                        <input class="color" type="radio" name="p2color">
+                        <input class="color" type="radio" name="p2color" value="blue">
                         <span class="checkmark" id="blue"></span>
                     </label>
                     <label class="container">
-                        <input class="color" type="radio" checked="checked" name="p2color">
+                        <input class="color" type="radio" checked="checked" name="p2color" value="green">
                         <span class="checkmark" id="green"></span>
                     </label>
                     <label class="container">
-                        <input class="color" type="radio" name="p2color">
+                        <input class="color" type="radio" name="p2color" value="pink">
                         <span class="checkmark" id="pink"></span>
                     </label>
                     <label class="container">
-                        <input class="color" type="radio" name="p2color">
+                        <input class="color" type="radio" name="p2color" value="yellow">
                         <span class="checkmark" id="yellow"></span>
                     </label>
                 </div>
@@ -133,6 +133,23 @@
     </div>
 
     <script>
+        let form = document.getElementById("form");
+        let saveBtn = document.getElementById("savebtn");
+
+        form.addEventListener("saveBtn", (e) => {
+
+            e.preventDefault();
+        });
+
+        /*if (document.getElementById("dice1").checked == true) {
+            document.getElementById("dice2game").disabled = true;
+        }
+
+        else {
+            document.getElementById("dice1game").disabled = true;
+        }
+        */
+
         function getData() {
             localStorage.setItem("p1Name", p1name.value);
             localStorage.setItem("p2Name", p2name.value);
@@ -153,6 +170,13 @@
                 languages.push(points[i].value);
             }
             localStorage.setItem("points", points);
+
+            console.log(p1name.value);
+            console.log(p2name.value);
+            console.log(p1color.value);
+            console.log(p2color.value);
+            console.log(dice.value);
+            console.log(points.value);
         }
     </script>
 </body>

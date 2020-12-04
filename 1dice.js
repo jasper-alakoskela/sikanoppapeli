@@ -1,11 +1,20 @@
 
-let p1Name = localStorage.getItem("p1Name");
-let p2Name = localStorage.getItem("p2Name");
+let player1 = document.getElementById("p1");
+let player2 = document.getElementById("p2");
+
+let p1Name = document.getElementById("p1name");
+let p2Name = document.getElementById("p2name");
+
+//p1Name = localStorage.getItem("p1Name");
+//p2Name = localStorage.getItem("p2Name");
+
+let p1Color = localStorage.getItem("p1color");
+let p2Color = localStorage.getItem("p2color");
 
 let players = [{ player1 }, { player2 }]
 
 let winScore = document.getElementById("winscore");
-winScore = localStorage.getItem("points");
+winScore = 50;
 let dice = 0;
 let score = 0;
 let turn = 0;
@@ -14,16 +23,10 @@ let player2Score = 0;
 
 function rollDice() {
 
-    //document.getElementById("dicegif").style.display = "block";
-    //document.getElementById("die").style.visibility = "hidden";
-
     let dice = document.getElementById("die");
     dice = Math.floor(Math.random() * 6) + 1;
 
     die.innerHTML = dice;
-
-    //document.getElementById("dicegif").style.display = "none";
-    //document.getElementById("die").style.visibility = "visible";
 
     score += dice;
 
@@ -60,12 +63,12 @@ function changeTurn() {
 
     if (turn == players.length) {
         turn = 0;
-        p1Name.style.color = localStorage.getItem("p1color");
+        p1Name.style.color = "red";
         p2Name.style.color = "#cacaca";
     }
     else {
         turn = 1;
-        p2Name.style.color = localStorage.getItem("p2color");
+        p2Name.style.color = "red";
         p1Name.style.color = "#cacaca";
     }
 

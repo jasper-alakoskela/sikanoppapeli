@@ -57,7 +57,7 @@
 
     </div>
     <div class="form">
-        <form action="/" id="form">
+        <form action="#" id="form">
             <div>
                 <label for="p1name">Nimi:</label>
                 <input type="text" id="p1name" placeholder="Pelaaja1">
@@ -132,52 +132,7 @@
         </form>
     </div>
 
-    <script>
-        let form = document.getElementById("form");
-        let saveBtn = document.getElementById("savebtn");
-
-        form.addEventListener("saveBtn", (e) => {
-
-            e.preventDefault();
-        });
-
-        /*if (document.getElementById("dice1").checked == true) {
-            document.getElementById("dice2game").disabled = true;
-        }
-
-        else {
-            document.getElementById("dice1game").disabled = true;
-        }
-        */
-
-        function getData() {
-            localStorage.setItem("p1Name", p1name.value);
-            localStorage.setItem("p2Name", p2name.value);
-
-            const p1Color = document.querySelector("input[name='p1color']:checked");
-            localStorage.setItem("p1color", p1color.value);
-
-            const p2Color = document.querySelector("input[name='p2color']:checked");
-            localStorage.setItem("p2color", p2color.value);
-
-            const whichDice = document.querySelector("input[name='dice']:checked");
-            localStorage.setItem("dice", dice.value);
-
-            const points = document.querySelectorAll("input[name='points']:checked");
-            points = [];
-            for (i = 0; i < points.length; i++) {
-                console.log(points[i].value)
-                languages.push(points[i].value);
-            }
-            localStorage.setItem("points", points);
-
-            console.log(p1name.value);
-            console.log(p2name.value);
-            console.log(p1color.value);
-            console.log(p2color.value);
-            console.log(dice.value);
-            console.log(points.value);
-        }
+    <script src="app.js">
     </script>
 </body>
 

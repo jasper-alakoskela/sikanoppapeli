@@ -1,6 +1,15 @@
 
-let p1Name = localStorage.getItem("p1Name");
-let p2Name = localStorage.getItem("p2Name");
+let player1 = document.getElementById("p1");
+let player2 = document.getElementById("p2");
+
+let p1Name = document.getElementById("p1name");
+let p2Name = document.getElementById("p2name");
+
+p1Name = localStorage.getItem("p1Name");
+p2Name = localStorage.getItem("p2Name");
+
+let p1Color = localStorage.getItem("p1color");
+let p2Color = localStorage.getItem("p2color");
 
 let players = [{ player1 }, { player2 }]
 
@@ -84,7 +93,6 @@ function rollDice() {
 
 }
 
-
 function changeTurn() {
     document.getElementById("getscorebtn").disabled = true;
     let currentPlayer = players[turn]
@@ -93,12 +101,12 @@ function changeTurn() {
 
     if (turn == players.length) {
         turn = 0;
-        p1Name.style.color = localStorage.getItem("p1color");
+        p1Name.style.color = localStorage.getItem("p1Color");
         p2Name.style.color = "#cacaca";
     }
     else {
         turn = 1;
-        p2Name.style.color = localStorage.getItem("p2color");
+        p2Name.style.color = localStorage.getItem("p2Color");
         p1Name.style.color = "#cacaca";
     }
 

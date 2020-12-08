@@ -5,16 +5,18 @@ let player2 = document.getElementById("p2");
 let p1Name = document.getElementById("p1name");
 let p2Name = document.getElementById("p2name");
 
-//p1Name = localStorage.getItem("p1Name");
-//p2Name = localStorage.getItem("p2Name");
+p1Name = localStorage.getItem("p1Name");
+p2Name = localStorage.getItem("p2Name");
 
 let p1Color = localStorage.getItem("p1color");
 let p2Color = localStorage.getItem("p2color");
 
 let players = [{ player1 }, { player2 }]
 
+let winningScore = localStorage.getItem("points");
+
 let winScore = document.getElementById("winscore");
-winScore = 50;
+winScore = `Pistettä voittoon:${winningScore}`
 let dice = 0;
 let score = 0;
 let turn = 0;
@@ -52,6 +54,20 @@ function rollDice() {
 
     document.getElementById("score").innerHTML = score;
 
+    if (player1Score >= winScore) {
+        document.getElementById("p1won").style.display = "inline";
+        document.getElementById("rollbtn").disabled = true;
+        document.getElementById("getscorebtn").disabled = true;
+    }
+    else if (player2Score >= winScore) {
+        document.getElementById("p2won").style.display = "inline";
+        document.getElementById("rollbtn").disabled = true;
+        document.getElementById("getscorebtn").disabled = true;
+    }
+    else {
+        document.getElementById("p1won").style.display = "none";
+        document.getElementById("p2won").style.display = "none";
+    }
     console.log(dice);
 }
 
@@ -63,12 +79,12 @@ function changeTurn() {
 
     if (turn == players.length) {
         turn = 0;
-        p1Name.style.color = "red";
+        p1Name.style.color = localStorage.getItem("p1Color");
         p2Name.style.color = "#cacaca";
     }
     else {
         turn = 1;
-        p2Name.style.color = "red";
+        p2Name.style.color = localStorage.getItem("p2Color");
         p1Name.style.color = "#cacaca";
     }
 
@@ -91,17 +107,3 @@ function getScore() {
     }
 }
 
-if (player1Score >= winScore) {
-    document.getElementById("p1won").style.visiblity = "visible";
-    document.getElementById("rollbtn").disabled = true;
-    document.getElementById("getscorebtn").disabled = true;
-}
-else if (player2Score >= winScore) {
-    document.getElementById("p2won").style.visiblity = "visible";
-    document.getElementById("rollbtn").disabled = true;
-    document.getElementById("getscorebtn").disabled = true;
-}
-else {
-    document.getElementById("p1won").style.visiblity = "hidden";
-    document.getElementById("p2won").style.visiblity = "hidden";
-}

@@ -6,7 +6,8 @@ const p1Color = document.getElementsByName("p1color");
 const p2Color = document.getElementsByName("p2color");
 const dice = document.getElementsByName("dice");
 
-
+const dice1Link = document.getElementById("dice1link");
+const dice2Link = document.getElementById("dice2link");
 
 form.addEventListener("saveBtn", (e) => {
 
@@ -17,6 +18,7 @@ form.addEventListener("saveBtn", (e) => {
     p2ColorSelector();
     diceSelector();
     chooseScore();
+
 });
 
 function p1ColorSelector() {
@@ -54,9 +56,11 @@ function p2ColorSelector() {
 function diceSelector() {
     if (dice[0].checked == true) {
         console.log("1dice");
+        dice2Link.style.display = "none";
     }
     else {
         console.log("2dice");
+        dice1Link.style.display = "none";
     }
 }
 

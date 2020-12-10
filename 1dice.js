@@ -1,22 +1,14 @@
-
 let player1 = document.getElementById("p1");
 let player2 = document.getElementById("p2");
 
 let p1Name = document.getElementById("p1name");
 let p2Name = document.getElementById("p2name");
 
-p1Name = localStorage.getItem("p1Name");
-p2Name = localStorage.getItem("p2Name");
+let gameData = JSON.parse(localStorage.getItem("gameData"));
 
-let p1Color = localStorage.getItem("p1color");
-let p2Color = localStorage.getItem("p2color");
+let winScore = document.getElementById("winScore");
+winScore.innerHTML = gameData.endPoints;
 
-let players = [{ player1 }, { player2 }]
-
-let winningScore = localStorage.getItem("points");
-
-let winScore = document.getElementById("winscore");
-winScore = `Pistettä voittoon:${winningScore}`
 let dice = 0;
 let score = 0;
 let turn = 0;

@@ -2,12 +2,42 @@ const form = document.getElementById("form");
 const saveBtn = document.getElementById("savebtn");
 const p1Name = document.getElementById("p1name");
 const p2Name = document.getElementById("p2name");
-const p1Color = document.getElementsByName("p1color");
-const p2Color = document.getElementsByName("p2color");
+const p1Color = document.forms['gameForm'].p1Color;
+const p2Color = document.forms['gameForm'].p2Color;
 const dice = document.getElementsByName("dice");
+const points = document.getElementById("points");
 
 const dice1Link = document.getElementById("dice1link");
 const dice2Link = document.getElementById("dice2link");
+
+form.addEventListener("submit", beginGame);
+
+function beginGame(event){
+    event.preventDefault();
+    let gameData = {
+        endPoints: points.value,
+        players: [
+            { 
+                name: p1Name.value, 
+                points: 0,
+                color: document.forms['gameForm'].p1color.value
+            },
+            { 
+                name: p2Name.value, 
+                points: 0,
+                color: document.forms['gameForm'].p2color.value
+            }
+        ]
+    }
+
+    localStorage.setItem("gameData", JSON.stringify(gameData));
+
+    let gameLink = document.forms['gameForm'].dice.value;
+
+    window.location.href = gameLink;
+
+}
+
 
 form.addEventListener("saveBtn", (e) => {
 

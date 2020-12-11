@@ -1,26 +1,22 @@
-
 let player1 = document.getElementById("p1");
 let player2 = document.getElementById("p2");
 
 let p1Name = document.getElementById("p1name");
 let p2Name = document.getElementById("p2name");
 
-p1Name = localStorage.getItem("p1Name");
-p2Name = localStorage.getItem("p2Name");
+p1Name.innerHTML = gameData.players[0].name;
+p2Name.innerHTML = gameData.players[1].name;
 
-let p1Color = localStorage.getItem("p1color");
-let p2Color = localStorage.getItem("p2color");
+let gameData = JSON.parse(localStorage.getItem("gameData"));
 
-let players = [{ player1 }, { player2 }]
+let winScore = document.getElementById("winScore");
+winScore.innerHTML = gameData.endPoints;
 
-let winScore = document.getElementById("winscore");
-winScore = localStorage.getItem("points");
 let dice = 0;
 let dice2 = 0;
 let score = 0;
 let turn = 0;
-let player1Score = 0;
-let player2Score = 0;
+
 
 function rollDice() {
 
@@ -99,14 +95,14 @@ function changeTurn() {
 
     turn++;
 
-    if (turn == players.length) {
+    if (turn == gameData.players.length) {
         turn = 0;
-        p1Name.style.color = localStorage.getItem("p1Color");
+        p1Name.style.color = gameData.players[0].color;
         p2Name.style.color = "#cacaca";
     }
     else {
         turn = 1;
-        p2Name.style.color = localStorage.getItem("p2Color");
+        p2Name.style.color = gameData.players[1].color;
         p1Name.style.color = "#cacaca";
     }
 
@@ -117,13 +113,13 @@ document.getElementById("getscorebtn").addEventListener("click", getScore);
 function getScore() {
     if (turn == 0) {
         player1Score += score;
-        document.getElementById("p1score").innerHTML = `Pisteet:${player1Score}`;
+        document.getElementById("p1score").innerHTML = `Pisteet:${gameData.players[0].points}`;
         score = 0;
         changeTurn();
     }
     else {
         player2Score += score;
-        document.getElementById("p2score").innerHTML = `Pisteet:${player2Score}`;
+        document.getElementById("p2score").innerHTML = `Pisteet:${gameData.players[1].points}`;
         score = 0;
         changeTurn();
     }

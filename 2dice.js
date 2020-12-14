@@ -4,19 +4,23 @@ let player2 = document.getElementById("p2");
 let p1Name = document.getElementById("p1name");
 let p2Name = document.getElementById("p2name");
 
+let gameData = JSON.parse(localStorage.getItem("gameData"));
+
 p1Name.innerHTML = gameData.players[0].name;
 p2Name.innerHTML = gameData.players[1].name;
 
-let gameData = JSON.parse(localStorage.getItem("gameData"));
+
+
+p1Name.style.color = gameData.players[0].color;
 
 let winScore = document.getElementById("winScore");
 winScore.innerHTML = gameData.endPoints;
+winScore = gameData.endPoints;
 
 let dice = 0;
 let dice2 = 0;
 let score = 0;
 let turn = 0;
-
 
 function rollDice() {
 
@@ -70,29 +74,13 @@ function rollDice() {
 
     document.getElementById("score").innerHTML = score;
 
-    if (player1Score >= winScore) {
-        document.getElementById("p1won").style.display = "inline";
-        document.getElementById("rollbtn").disabled = true;
-        document.getElementById("getscorebtn").disabled = true;
-    }
-    else if (player2Score >= winScore) {
-        document.getElementById("p2won").style.display = "inline";
-        document.getElementById("rollbtn").disabled = true;
-        document.getElementById("getscorebtn").disabled = true;
-    }
-    else {
-        document.getElementById("p1won").style.display = "none";
-        document.getElementById("p2won").style.display = "none";
-    }
+
     console.log(dice);
     console.log(dice2);
-
 }
 
 function changeTurn() {
     document.getElementById("getscorebtn").disabled = true;
-    let currentPlayer = players[turn]
-
     turn++;
 
     if (turn == gameData.players.length) {
@@ -112,17 +100,35 @@ document.getElementById("getscorebtn").addEventListener("click", getScore);
 
 function getScore() {
     if (turn == 0) {
-        player1Score += score;
+        gameData.players[0].points += score;
         document.getElementById("p1score").innerHTML = `Pisteet:${gameData.players[0].points}`;
         score = 0;
         changeTurn();
     }
     else {
-        player2Score += score;
+        gameData.players[1].points += score;
         document.getElementById("p2score").innerHTML = `Pisteet:${gameData.players[1].points}`;
         score = 0;
         changeTurn();
     }
+
+    if (gameData.players[0].points >= winScore) {
+        document.getElementById("p1won").style.display = "inline";
+        document.getElementById("rollbtn").disabled = true;
+        document.getElementById("getscorebtn").disabled = true;
+        p2Name.style.color = "#cacaca";
+        p1Name.style.color = "#cacaca";
+    }
+    else if (gameData.players[1].points >= winScore) {
+        document.getElementById("p2won").style.display = "inline";
+        document.getElementById("rollbtn").disabled = true;
+        document.getElementById("getscorebtn").disabled = true;
+        p2Name.style.color = "#cacaca";
+        p1Name.style.color = "#cacaca";
+    }
+    else {
+        document.getElementById("p1won").style.display = "none";
+        document.getElementById("p2won").style.display = "none";
+    }
+
 }
-
-

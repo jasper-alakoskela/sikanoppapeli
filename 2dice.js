@@ -9,8 +9,6 @@ let gameData = JSON.parse(localStorage.getItem("gameData"));
 p1Name.innerHTML = gameData.players[0].name;
 p2Name.innerHTML = gameData.players[1].name;
 
-
-
 p1Name.style.color = gameData.players[0].color;
 
 let winScore = document.getElementById("winScore");
